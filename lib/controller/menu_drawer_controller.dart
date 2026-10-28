@@ -1,27 +1,15 @@
+import 'package:application_project/menu/history.dart';
+import 'package:application_project/menu/home.dart';
+import 'package:application_project/menu/profile.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:application_project/routes.dart';
+import 'package:get/state_manager.dart';
 
 class MenuDrawerController extends GetxController {
-  final List<Map<String, dynamic>> menuItems = [
-    {
-      'icon': Icons.home,
-      'title': 'Home',
-      'route': Routes.mainMenu,
-    },
-    {
-      'icon': Icons.history,
-      'title': 'History',
-      'route': Routes.history,
-    },
-    {
-      'icon': Icons.person,
-      'title': 'Profile',
-      'route': Routes.profile,
-    },
-  ];
+  final RxInt selectedIndex = 0.obs;
 
-  void navigateTo(String route) {
-    Get.toNamed(route);
+  void changePage(int index) {
+    selectedIndex.value = index;
   }
+
+  List<Widget> listPages = [Home(), History(), Profile()]; 
 }
