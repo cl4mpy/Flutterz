@@ -1,8 +1,11 @@
 import 'package:application_project/controller/main_menu_controller.dart';
+import 'package:application_project/pages/menu_drawer.dart';
+import 'package:application_project/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:get/route_manager.dart';
 
 class MainMenuPage extends StatelessWidget {
   MainMenuPage({super.key});
@@ -21,16 +24,12 @@ class MainMenuPage extends StatelessWidget {
           currentIndex: menucontroller.selectedIndex.value,
           onTap: menucontroller.changePage,
           items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home), 
-              label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(
               icon: Icon(Icons.history),
               label: "History",
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person), 
-              label: "Profile"),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           ],
         ),
       ),

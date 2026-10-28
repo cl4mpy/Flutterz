@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: "Belajar Flutter PPLG 3",
-      initialRoute: Routes.mainMenu,
+      initialRoute: Routes.menuDrawer,
       getPages: Routes.pages,
     );
   }
